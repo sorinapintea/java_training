@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class LogicalOperations {
 
     // 3.
@@ -89,5 +92,165 @@ public class LogicalOperations {
         }
 
         return greatestNumber;
+    }
+
+//    4. Creati o metoda in clasa LogicalOp, care sa primeasca doi parametrii de tip numar. Metoda trebuie sa verifice care
+//    dintre cele doua numere este mai mare, si sa execute o numaratoare crescatoare de la cel mai mic la cel mai mare.(ex: daca
+//    int x e primul parametru iar int y  este cel de-al doilea,
+//    daca x  este mai mare decat y,  atunci numaratoarea sa fie de la y la x).
+    public void count(int x, int y){
+        int min = x;
+        int max = x;
+        if (x>y)
+            min = y;
+        else
+            max = y;
+        for (int i = min; i <= max; i++) {
+            System.out.println(i);
+        }
+    }
+
+//Creati o metoda in clasa LogicalOp care sa afiseze urmatorul tipar:
+//*******
+//******
+//*****
+//****
+//***
+//
+//**
+//
+//*
+
+    public void printStars (int startNumber){
+        for (int i = startNumber; i > 0; i--){
+            for (int j= 0; j < i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+//    8. Creati o metoda care sa primeasca doi parametri de tip numar, si sa returneze media numerelor divizibile cu 7, din acel interval.
+//    Apelati metoda in clasa Main, metoda main() pentru a verifica daca functioneaza.
+    public float mean (int min, int max){
+        float sum = 0;
+        for (int i = min; i <= max; i++){
+            if (i%7 == 0)
+                sum += i;
+        }
+        return sum/(max-min+1);
+    }
+
+//    9. Creati o metoda care sa afiseze primele 20 de numere din sirul lui Fibonacci.
+
+    public void printFibonacci(int number){
+        int i = 1;
+        int j = 0;
+        int k = 2;
+        int l = 0;
+        while (j < number)
+        {
+            System.out.println(i);
+            l = i + k;
+            i = k;
+            k = l;
+            j++;
+        }
+    }
+
+//    10. Creati o metoda numita CozaLozaWoza.
+//Metoda va afisa:
+//- numerele de la 1 la 110
+//- 11 numere pe linie
+//- se va afisa Coza pentru numerele care sunt multiplu de 3 (1 2 Coza 4)
+//- se va afisa Loza pentru numerele care sunt multiplu de 5 (2 3 4 Loza 6)
+//- se va afisa Woza pentru numerele care sunt multiplu de 7 (4 5 6 Woza 8)
+//- se va afisa CozaLoza pentru numerele care sunt multiplu de 3 SI 5
+//- se va afisa CozaWoza pentru multiplu de 3 SI 7
+//- se va afisa WozaLoza pentru multiplu de 5 SI 7
+//- se va afisa CozaLozaWoza pentru multiplu de 3 SI 5 SI 7
+
+    public void CozaLozaWoza(){
+        int i = 1;
+
+        while (i <= 110){
+            String stringToPrint = " ";
+            if (i%3 == 0)
+                stringToPrint = stringToPrint + "Coza";
+            if (i%5 == 0)
+                stringToPrint = stringToPrint + "Loza";
+            if (i%7 == 0)
+                stringToPrint = stringToPrint + "Woza";
+
+            if (!stringToPrint.equals(" "))
+                System.out.print(stringToPrint);
+            else
+                System.out.print(" " + i);
+
+            if (i%11 == 0)
+                System.out.println();
+            i++;
+            }
+    }
+
+    //test array contains string
+
+    public boolean arrayContainsValue(String text, String[] array){
+        for (String i : array) {
+            if (i.equals(text))
+                return true;
+        }
+        return false;
+    }
+
+    public void printArray(int[] array){
+        for (int i : array)
+            System.out.print(i + " ");
+        System.out.println();
+    }
+
+//    8. Creati o metoda care sa primeasca un parametru de tip array de numere, populat cu valori, si un parametru de tip numar.
+//    Metoda sa verifice daca numarul exista in array, si daca da, sa returneze array-ul primit, fara acel numar.
+//    Apelati metoda in main() pentru a verifica daca functioneaza.
+//
+//    public int[] returnArray(int number, int[] array){
+//        boolean conatinsElement = false;
+//        for (int i : array){
+//            if (i == number) {
+//                conatinsElement = true;
+//                break;
+//            }
+//        }
+//
+//        if (conatinsElement) {
+//            int[] smallArray = new int[array.length - 1];
+//
+//            for (int i= 0; i< array.length; i++) {
+//                if (array[i] != number)
+//                    smallArray[i] = array[i];
+//            }
+//            return smallArray;
+//        }
+//        return array;
+//    }
+
+    //afisati cel mai mare numar dintr=o lista
+
+    public int showBiggestNUmber (List<Integer> list ){
+        int highestNumber = list.get(0);
+        for (int i: list) {
+            if (i>highestNumber)
+                highestNumber = i;
+        }
+        return highestNumber;
+    }
+
+    public List<Integer> showEvenNumberFromList(List<Integer> list){
+        List<Integer> listEven = new ArrayList<>();
+        for (int i : list){
+            if (i%2 == 0)
+                listEven.add(i);
+        }
+        return listEven;
     }
 }
