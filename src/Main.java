@@ -39,7 +39,7 @@ public class Main {
 
         System.out.println(op.arrayContainsValue("aa", new String[]{"bb", "aa"}));
         op.printArray(new int[]{1, 2});
-        op.printArray(op.returnArray(2,  new int[]{1, 2, 3}));
+      //  op.printArray(op.returnArray(2,  new int[]{1, 2, 3}));
 
         List<Integer> list = new ArrayList<>();
         list.add(1);

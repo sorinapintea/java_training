@@ -234,6 +234,26 @@ public class LogicalOperations {
 //        return array;
 //    }
 
+//    9. Creati o metoda care sa primeasca un array, si sa returneze al doilea cel mai mic numar din array. Apelati metoda in main() pentru a verifica daca functioneaza.
+// tbupdated
+public int secondSmallestNumber (int[] array)
+{
+    int smallNumber = array[0];
+    int secondSmallNumber = array[0];
+    for (int i :array){
+        if (smallNumber < array[i])
+        {
+            if (secondSmallNumber > array[i])
+            secondSmallNumber = array[i];
+            smallNumber = array[i];
+        }
+    }
+    return 3;
+}
+
+//10. Creati o metoda care sa primeasca doi parametrii: un array populat cu valori, si un array gol. Metoda sa copieze toate valorile din primul array, parcurgandu-l, in cel de-al doilea.
+// pelati metoda in main() pentru a verifica daca functioneaza.
+
     //afisati cel mai mare numar dintr=o lista
 
     public int showBiggestNUmber (List<Integer> list ){
@@ -253,4 +273,13 @@ public class LogicalOperations {
         }
         return listEven;
     }
+
+//    Scrieti o metoda Java, care sa primeasca parametru o Lista,
+//    si sa afiseze, pe rand, toate valorile din lista, dar invers(de la capat la inceput).
+
+//    public  List<Integer> reversedList(List<Integer> list){
+//        List[] reversed = new List[];
+//        reversed.length
+//        //for (int i)
+//    }
 }
